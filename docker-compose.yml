@@ -1,5 +1,6 @@
 services:
   hurricane-server:
     image: hurricane-server
-    ports: "8000:7000"
+    ports: 
+      - "8000:7000"
     
