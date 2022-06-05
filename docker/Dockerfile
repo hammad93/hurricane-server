@@ -17,6 +17,7 @@ RUN pip install -r /root/requirements.txt
 # Add git repository
 
 RUN git clone --single-branch --branch master https://github.com/hammad93/hurricane-server.git
+RUN git clone --single-branch --branch master https://github.com/hammad93/hurricane-map.git
 
 # Setup cron job
 
