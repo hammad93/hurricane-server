@@ -1,6 +1,6 @@
 services:
   hurricane-server:
-    image: hurricane-server
+    build: docker
     ports: 
       - "8000:7000"
     
