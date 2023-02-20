@@ -7,8 +7,8 @@ RUN pip install -r /root/requirements.txt
 
 # Add git repository
 
-RUN git clone --single-branch --branch master https://github.com/hammad93/hurricane-server.git
-RUN git clone --single-branch --branch master https://github.com/hammad93/hurricane-map.git
+RUN git clone --single-branch --branch main https://github.com/hammad93/hurricane-server.git
+RUN git clone --single-branch --branch main https://github.com/hammad93/hurricane-map.git
 
 # Web server and Database keys
 COPY database.key ./hurricane-map/django/map/map/keys/
