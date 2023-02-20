@@ -11,7 +11,7 @@ services:
       dockerfile: Dockerfile
   hurricane-lab:
     build: 
-      context: HurricaneDissertation/docker
+      context: ./HurricaneDissertation/docker
       dockerfile: Dockerfile
     ports:
       - "6006:6006"
