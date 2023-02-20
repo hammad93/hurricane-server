@@ -1,3 +1,6 @@
+# credentials file
+credentials.csv
+
 # Repositories running in the server
 hurricane-deploy/
 HurricaneDissertation/
