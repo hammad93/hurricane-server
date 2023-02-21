@@ -5,6 +5,9 @@ FROM continuumio/anaconda3
 COPY requirements.txt /root/
 RUN pip install -r /root/requirements.txt
 
+# Database engine needs to be installed through Conda
+RUN conda install -y mysqlclient
+
 # Add git repository
 
 RUN git clone --single-branch --branch main https://github.com/hammad93/hurricane-server.git
