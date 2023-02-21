@@ -14,10 +14,6 @@ RUN git clone --single-branch --branch main https://github.com/hammad93/hurrican
 COPY database.key ./hurricane-map/django/map/map/keys/
 COPY django_secret.key ./hurricane-map/django/map/map/keys/
 
-# Setup cron job
-
-RUN apt-get update && apt-get -y install cron
-
 # Entrypoint
 ADD entrypoint.sh /root/entrypoint.sh
 RUN chmod +x /root/entrypoint.sh
