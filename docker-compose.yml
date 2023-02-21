@@ -4,7 +4,7 @@ services:
       context: ./docker
       dockerfile: Dockerfile
     ports: 
-      - "8000:7000"
+      - "7000:8000"
   hurricane-deploy:
     build:
       context: ./hurricane-deploy/docker
@@ -15,6 +15,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "6006:6006"
-      - "8888:6005"
+      - "6005:8888"
       
     
