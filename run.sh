@@ -1,5 +1,6 @@
 #!/bin/sh
 
+docker image prune -f
 cp database.key docker/
 cp django_secret.key docker/
 git clone --single-branch --branch main https://github.com/hammad93/hurricane-deploy.git
