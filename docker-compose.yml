@@ -9,6 +9,8 @@ services:
     build:
       context: ./hurricane-deploy/docker
       dockerfile: Dockerfile
+    ports: 
+      - "1337:1337"
   hurricane-lab:
     build: 
       context: ./HurricaneDissertation/docker
