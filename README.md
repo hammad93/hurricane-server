@@ -18,6 +18,10 @@ There's a few credential files that's needed for the `hurricane-deploy` reposito
 
 ## Ports
 
+### 1337
+
+The REST API is located here.
+
 ### 7000
 
 This hosts the interactive map
