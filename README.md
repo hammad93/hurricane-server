@@ -8,8 +8,10 @@ The intent of this repository is to open source everything available through htt
 Run the following command on a Linux system with Docker installed,
 `sh ./run.sh`
 
-sudo docker-compose rm -f -s
-sudo docker image prune -a
+To rebuild, first remove the containers,
+`sudo docker-compose rm -f -s`
+Then prune. This will allow us to rebuild from start
+`sudo docker image prune -a`
 
 ## Credentials
 
