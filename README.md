@@ -10,8 +10,12 @@ Run the following command on a Linux system with Docker installed,
 
 To rebuild, first remove the containers,
 `sudo docker-compose rm -f -s`
+
 Then prune. This will allow us to rebuild from start
 `sudo docker image prune -a`
+
+We can see the logs with this command,
+`sudo docker-compose logs`
 
 ## Credentials
 
