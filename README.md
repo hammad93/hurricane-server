@@ -8,6 +8,9 @@ The intent of this repository is to open source everything available through htt
 Run the following command on a Linux system with Docker installed,
 `sh ./run.sh`
 
+sudo docker-compose rm -f -s
+sudo docker image prune -a
+
 ## Credentials
 
 There's a few credential files that's needed for the `hurricane-deploy` repository. Place it in the root of this repository, `./`
