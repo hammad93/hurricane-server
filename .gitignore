@@ -1,5 +1,8 @@
 # credentials file
 credentials.csv
+database.key
+django_secret.key
+hurricane-live-db.key
 
 # Repositories running in the server
 hurricane-deploy/
