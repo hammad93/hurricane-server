@@ -18,5 +18,11 @@ services:
     ports:
       - "6006:6006"
       - "6005:8888"
+  hurricane-geoserver:
+    build: 
+      context: ./hurricane-geoserver/docker
+      dockerfile: Dockerfile
+    ports:
+      - "6004:8080"
       
     
