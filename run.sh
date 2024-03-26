@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Creating wms data directory if it doesn't exist."
+mkdir -p wms_data
 docker image prune -f
 git clone --depth 1 --single-branch --branch main https://github.com/hammad93/hurricane-deploy.git
 git clone --depth 1 --single-branch --branch master https://github.com/apatel726/HurricaneDissertation.git

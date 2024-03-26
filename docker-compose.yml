@@ -24,5 +24,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "6004:8080"
+    environment:
+      - INSTALL_EXTENSIONS=true
+      - STABLE_EXTENSIONS=netcdf
+    volumes:
+      - ./wms_data:/opt/geoserver_data/
       
     
