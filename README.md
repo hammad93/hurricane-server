@@ -54,6 +54,9 @@ The REST API is located here.
 ### 7000
 This hosts the interactive map
 
+### 6004
+The Geoserver container with WMS capabilities.
+
 ### 6005
 This is the Jupyter Lab environment available for developers.
 
