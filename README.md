@@ -3,6 +3,7 @@ Hello! This server hosts the hurricane artificial intelligence that can be acces
 link https://github.com/hammad93/hurricane-net . The domain name configured is https://fluids.ai
 
 ## Installation & Quickstart
+This repository is reproduceable. Please try from a new clone if there are errors or unexpected behaviors.
 
 Run the following command on a Linux system with Docker installed,
 `sh ./run.sh`
