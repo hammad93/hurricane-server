@@ -5,18 +5,13 @@ FROM continuumio/anaconda3
 COPY requirements.txt /root/
 RUN pip install -r /root/requirements.txt
 
-# Database engine needs to be installed through Conda
-RUN conda install -y mysqlclient
-
 # Add git repository
-
 RUN git clone --single-branch --branch main https://github.com/hammad93/hurricane-server.git
 RUN git clone --single-branch --branch main https://github.com/hammad93/hurricane-map.git
 
 # Web server and Database keys
-COPY database.key ./hurricane-map/django/map/map/keys/
+COPY credentials.csv ./hurricane-map/django/map/map/keys/
 COPY django_secret.key ./hurricane-map/django/map/map/keys/
-COPY hurricane-live-db.key ./hurricane-map/django/map/map/keys/
 
 # Entrypoint
 ADD entrypoint.sh /root/entrypoint.sh
