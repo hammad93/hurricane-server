@@ -21,8 +21,6 @@ We can see the logs with this command,
 
 There's a few credential files that's needed for the `hurricane-deploy` repository. Place it in the root of this repository, `./`
 
- - credentials.csv
- - database.key
  - django_secret.json
 
 Hurricane Map
@@ -49,10 +47,10 @@ To start it back up,
 sudo /opt/bitnami/ctlscript.sh start
 ## Ports
 
-### 1337
+### 1337 (Public)
 The REST API is located here.
 
-### 7000
+### 8000
 This hosts the interactive map
 
 ### 6004

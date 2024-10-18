@@ -10,7 +10,6 @@ RUN git clone --single-branch --branch main https://github.com/hammad93/hurrican
 RUN git clone --single-branch --branch main https://github.com/hammad93/hurricane-map.git
 
 # Web server and Database keys
-COPY credentials.csv ./hurricane-map/django/map/map/keys/
 COPY django_secret.key ./hurricane-map/django/map/map/keys/
 
 # Entrypoint
