@@ -23,28 +23,14 @@ There's a few credential files that's needed for the `hurricane-deploy` reposito
 
  - django_secret.json
 
-Hurricane Map
--------------
-There is a MySql database called hurricane_archive that is utilized by the same instance 
-as WordPress.
+## Hurricane Map
+We utilize the fluids HTTP API to get the live storms and forecasts. Then, we plot them on an interactive map.
 
-Here is the startup script for the hurricane map
-/opt/bitnami/apps/wordpress/htdocs/map/hurricane-map/django/map$ python3 manage.py runserver 0.0.0.0:7000
+## SSL Certificate
+We create standalone SSL certificates from LetsEncrypt and can renew them using this command,
 
-SSL Certificate
----------------
-To renew the certificate, we use certbot. We have to bring down the server and start
-it back up using this command,
+`sudo certbot renew`
 
-sudo /opt/bitnami/ctlscript.sh stop
-
-This is the certbot command to renew,
-
-sudo certbot renew
-
-To start it back up,
-
-sudo /opt/bitnami/ctlscript.sh start
 ## Ports
 
 ### 1337 (Public)
