@@ -1,10 +1,4 @@
 services:
-  openwebui:
-    image: ghcr.io/open-webui/open-webui:main
-    ports:
-      - "3000:3000"
-    volumes:
-      - open-webui:/app/backend/data
   nginx:
     image: nginx:alpine
     ports:
@@ -13,7 +7,4 @@ services:
     volumes:
       - ./docker/proxy/conf.d:/etc/nginx/conf.d
       - ./docker/proxy/ssl:/etc/nginx/ssl
-    depends_on:
-      - open-webui
-volumes:
-  open-webui:
+    network_mode: host
