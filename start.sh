@@ -11,4 +11,4 @@
 #cp hurricane-live-db.key docker/
 #cp credentials.csv ./hurricane-deploy/docker/
 #docker compose build --no-cache
-docker compose up
+docker compose up -d
