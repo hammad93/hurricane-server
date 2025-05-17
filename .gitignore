@@ -3,6 +3,7 @@ credentials.csv
 database.key
 django_secret.key
 hurricane-live-db.key
+*.pem
 
 # Repositories running in the server
 hurricane-deploy/
