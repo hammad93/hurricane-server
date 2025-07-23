@@ -24,3 +24,4 @@ services:
       - GEOSERVER_DATA_DIR=/opt/geoserver_data
       - INSTALL_EXTENSIONS=true
       - STABLE_EXTENSIONS=ysld,ogcapi-features
+      - PROXY_BASE_URL=https://nfc.ai/geoserver
