@@ -25,3 +25,4 @@ services:
       - INSTALL_EXTENSIONS=true
       - STABLE_EXTENSIONS=ysld,ogcapi-features
       - PROXY_BASE_URL=https://nfc.ai/geoserver
+      - GEOSERVER_CSRF_WHITELIST=nfc.ai
