@@ -19,7 +19,7 @@ services:
     ports:
       - "6004:8080"
     volumes:
-      - ./:/opt/geoserver_data
+      - ./data/:/opt/geoserver_data
     environment:
       - GEOSERVER_DATA_DIR=/opt/geoserver_data
       - INSTALL_EXTENSIONS=true
