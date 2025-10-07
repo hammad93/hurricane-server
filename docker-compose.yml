@@ -15,14 +15,9 @@ services:
       - "8000:8000"
   
   geoserver:
-    image: docker.osgeo.org/geoserver:2.28.x
+    build:
+      context: https://github.com/hammad93/hurricane-geoserver.git:docker
     ports:
       - "6004:8080"
     volumes:
       - ./data/:/opt/geoserver_data
-    environment:
-      - CORS_ENABLED=true
-      - INSTALL_EXTENSIONS=true
-      - STABLE_EXTENSIONS=ysld,ogcapi-features
-      - PROXY_BASE_URL=https://nfc.ai/geoserver
-      - GEOSERVER_CSRF_WHITELIST=nfc.ai
