@@ -16,8 +16,11 @@ services:
   
   geoserver:
     build:
-      context: https://github.com/hammad93/hurricane-geoserver.git:docker
+      context: https://github.com/hammad93/hurricane-geoserver.git
+      dockerfile: ./docker/Dockerfile
+    environment:
+      - GEOSERVER_ADMIN_PASSWORD=
     ports:
       - "6004:8080"
     volumes:
-      - ./data/:/opt/geoserver_data
+      - ./wms_data/:/opt/geoserver_data
