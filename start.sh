@@ -10,5 +10,6 @@
 #cp django_secret.key docker/
 #cp hurricane-live-db.key docker/
 #cp credentials.csv ./hurricane-deploy/docker/
+yes | docker system prune -a
 docker compose build --no-cache
 docker compose up -d
