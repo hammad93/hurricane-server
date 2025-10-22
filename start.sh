@@ -12,6 +12,7 @@
 #cp credentials.csv ./hurricane-deploy/docker/
 apt update -y
 apt-get install -y libgdal-dev gdal-bin python3-gdal
+pip install -r requirements.txt
 yes | docker system prune -a
 docker compose build --no-cache
 docker compose up -d
