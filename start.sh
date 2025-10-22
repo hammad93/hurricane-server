@@ -10,6 +10,8 @@
 #cp django_secret.key docker/
 #cp hurricane-live-db.key docker/
 #cp credentials.csv ./hurricane-deploy/docker/
+apt update -y
+apt-get install -y libgdal-dev gdal-bin python3-gdal
 yes | docker system prune -a
 docker compose build --no-cache
 docker compose up -d
