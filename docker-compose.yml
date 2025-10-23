@@ -19,8 +19,26 @@ services:
       context: https://github.com/hammad93/hurricane-geoserver.git
       dockerfile: ./docker/Dockerfile
     environment:
-      - GEOSERVER_ADMIN_PASSWORD=
+      - GEOSERVER_ADMIN_PASSWORD=${GEOSERVER_ADMIN_PASSWORD}
     ports:
       - "6004:8080"
     volumes:
       - ./wms_data/:/opt/geoserver_data
+  
+  agent:
+    build:
+      context: https://github.com/hammad93/hurricane-agent.git
+      dockerfile: ./docker/Dockerfile
+    environment:
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASS=${SMTP_PASS}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - SQL_USER=${SQL_USER}
+      - SQL_PASS=${SQL_PASS}
+      - SQL_HOST=${SQL_HOST}
+      - SQL_PORT=${SQL_PORT}
+      - OPENWEBUI_TOKEN=${OPENWEBUI_TOKEN}
+      - WP_USER=${WP_USER}
+      - WP_PASS=${WP_PASS}
+    network_mode: host
