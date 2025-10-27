@@ -16,8 +16,7 @@ services:
   
   geoserver:
     build:
-      context: https://github.com/hammad93/hurricane-geoserver.git
-      dockerfile: ./docker/Dockerfile
+      context: https://github.com/hammad93/hurricane-geoserver.git#main:docker
     environment:
       - GEOSERVER_ADMIN_PASSWORD=${GEOSERVER_ADMIN_PASSWORD}
     ports:
@@ -27,8 +26,7 @@ services:
   
   agent:
     build:
-      context: https://github.com/hammad93/hurricane-agent.git
-      dockerfile: ./docker/Dockerfile
+      context: https://github.com/hammad93/hurricane-agent.git#main:docker
     environment:
       - SMTP_USER=${SMTP_USER}
       - SMTP_PASS=${SMTP_PASS}
