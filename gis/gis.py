@@ -47,7 +47,7 @@ def json_to_shp(path, out=''):
     output_path = out + filename
     if check_file(output_path):
         return output_path
-    command = f"ogr2ogr -f 'ESRI Shapefile' {path} {output_path}"
+    command = f"ogr2ogr -f 'ESRI Shapefile' {output_path} {path}"
     process = subprocess.Popen(command, shell=True)
     process.wait()
     return output_path
