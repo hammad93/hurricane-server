@@ -39,6 +39,18 @@ def img_to_tiff(path, out='', proj='WGS84', cords='-180 +90 +180 -90'):
     process.wait()
     return output_path
 
+def json_to_shp(path, out=''):
+    '''
+    Takes in a GeoJSON and converts it to an Shapefile
+    '''
+    filename = path.split('/')[-1][:path.rfind('.')] + '.shp' # create output path
+    output_path = out + filename
+    if check_file(output_path):
+        return output_path
+    command = f"ogr2ogr -f 'ESRI Shapefile' {path} {output_path}"
+    process.wait()
+    return output_path
+
 def blue_marble(path='./', url='https://upload.wikimedia.org/wikipedia/commons/2/23/Blue_Marble_2002.png'):
     '''
     Downloads NASA's Blue Marble image from either the specified or configured URL
@@ -125,6 +137,8 @@ def main(out='../wms_data/'):
 
     # download coastlines
     coast_out = coastlines(path=out)
+    # transform
+    shp_out = json_to_shp(path=coast_out, out=out)
 
 if __name__ == "__main__":
     for i, arg in enumerate(sys.argv):
