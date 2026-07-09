@@ -18,7 +18,7 @@ Visit https://certbot.eff.org/ for more details.
 2. Run `sudo certbot certonly --standalone` to process the SSL files (fullchain, privkey). Enter in the domain names from earlier. We copy these files manually. Note save directory for SSL files (/etc/letsencrypt/live/...)
 3. Create a directory named ssl like so, `mkdir ./docker/proxy/ssl`
 4. Copy the `fullchain.pem` and `privkey.pem` files from the save directory in step 2.
-5. Rebuild `hurricane-server` by running `sudo bash ./stop.sh`
+5. Rebuild `hurricane-server` by running `sudo bash ./start.sh`
 
 
 ## Environment Variables
