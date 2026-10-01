@@ -40,3 +40,28 @@ services:
       - WP_USER=${WP_USER}
       - WP_PASS=${WP_PASS}
     network_mode: host
+
+  satellites:
+    build:
+      context: https://github.com/hammad93/hurricane-satellites.git#main:docker
+    environment:
+      - GEOSERVER_WORKSPACE=${GEOSERVER_WORKSPACE}
+      - GEOSERVER_URL=${GEOSERVER_URL}
+      - GEOSERVER_ADMIN_USER=${GEOSERVER_ADMIN_USER}
+      - GEOSERVER_ADMIN_PASSWORD=${GEOSERVER_ADMIN_PASSWORD}
+      - EUMETSAT_PASS=${EUMETSAT_PASS}
+      - EUMETSAT_SECRET=${EUMETSAT_SECRET}
+    volumes:
+      - ./wms_data/:/output
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.fifteen-min.schedule: "0 */15 * * * *"
+      ofelia.job-exec.fifteen-min.command: "python /app/hurricane-satellites/test.py --clean=True --wms=True"
+
+  ofelia:
+    image: mcuadros/ofelia:latest
+    depends_on:
+      - satellites
+    command: daemon --docker -f label=com.docker.compose.project=${COMPOSE_PROJECT_NAME}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
