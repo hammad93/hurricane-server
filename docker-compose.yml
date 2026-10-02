@@ -69,6 +69,7 @@ services:
   ofelia:
     image: mcuadros/ofelia:latest
     depends_on:
+      - agent
       - satellites
     command: daemon --docker -f label=com.docker.compose.project=${COMPOSE_PROJECT_NAME}
     volumes:
