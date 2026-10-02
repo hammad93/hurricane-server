@@ -40,6 +40,14 @@ services:
       - WP_USER=${WP_USER}
       - WP_PASS=${WP_PASS}
     network_mode: host
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.hourly.schedule: "0 0 * * * *"
+      ofelia.job-exec.hourly.command: "python /hurricane-agent/report.py hourly"
+      ofelia.job-exec.daily.schedule: "0 0 0 * * *"
+      ofelia.job-exec.daily.command: "python /hurricane-agent/report.py daily"
+      ofelia.job-exec.five_min.schedule: "0 */5 * * * *"
+      ofelia.job-exec.five_min.command: "python /hurricane-agent/report.py five_min"
 
   satellites:
     build:
